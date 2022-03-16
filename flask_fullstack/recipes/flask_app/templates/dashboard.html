@@ -1,0 +1,71 @@
+{% extends "base.html" %}  
+{% block content %}
+<section class="food-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 hero-text-box" >
+                <h1 class="larger-h1 test">
+                    "Laughter is 
+                    <br>
+                    Brightest in the  
+                    <br>
+                    Place where 
+                    <br> 
+                    Food is good"
+                </h1>
+                <br>
+                <p class="larger-p1">-Irish Proverb</p>
+            </div>
+            <div class="col-6">
+                <div class="img-front-page-div">
+                    <img class="img-front-page" src="/static/img/hero.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- <section class="container-fluid mt-5">
+        <div class="row g-0 d-flex justify-content-center">
+            <div class="col-2">
+                <img id="changing-pic1" class="img-fluid h-100" src="/static/img/japanese-meal.jpg" alt="">
+            </div>
+            <div class="col-2">
+                <img id="changing-pic2" class="img-fluid h-100" src="/static/img/tomato.jpg" alt="">
+            </div>
+            <div class="col-2">
+                <img id="changing-pic3" class="img-fluid h-100" src="/static/img/group-eating.jpg" alt="">
+            </div>
+        </div>
+    </section> -->
+    <!-- <h1 class="text-center mb-5">Welcome {{this_user.name}}</h1>
+    <hr> -->
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-6">
+                <h1 class="m-5 larger-h1">Top Recipes</h1>
+            </div>
+            <div class="col-6 d-flex justify-content-end" style="align-items: center;">
+                <form action="#" class="d-flex p-4">
+                    <input class="form-control" type="text" name="search_recipes">
+                    <label>Search Recipes</label>
+                </form>
+            </div>
+        </div>
+    <section class="top-recipes">
+        <div class="row justify-content-around">
+            {% for recipe in recipes %} 
+            <div class="col-3 d-flex justify-content-around p-5">
+                <div class="recipes">
+                    <a href="/view/{{recipe.id}}">
+                        <h4 class="text-center">{{recipe.food_name}}</h4>
+                        <img class="img-for-recipes" src="{{recipe.image_path}}" alt="">
+                        <p class="text-center">Posted By: {{recipe.user_name}}</p>
+                        <p class="text-center"></p>
+                    </a>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </section>
+    </div>
+{% endblock %}

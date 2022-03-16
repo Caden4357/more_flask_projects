@@ -1,0 +1,151 @@
+*{
+    font-family: 'Shizuru', cursive;
+    font-weight: 600;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #fdf5ea;
+    height: 100vh;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.wrapper{
+    background-color: #f9e0bf;
+}
+.navbar-custom{
+    padding: 2rem;
+    /* background-color: #764d14; */
+    border-bottom:2px dashed #eb9928;
+}
+/* .wrapper{
+    padding: 10px;
+} */
+.row{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.dropdown-menu{
+    background-color: #f9e0bf;
+    
+}
+.img-fluid {
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    /* -webkit-filter: grayscale(50%);
+    -moz-filter: grayscale(50%);
+    -o-filter: grayscale(50%);
+    -ms-filter: grayscale(50%);
+        filter: grayscale(50%);  */
+    /* border: 2px solid black; */
+}
+.img-front-page{
+    width: 45rem;
+    height: 45rem;
+    image-rendering: pixelated;
+    padding: 2rem;
+    /* margin-right: 2rem; */
+    /* box-shadow: 10px 15px 14px 2px rgba(237,163,62,0.75);
+-webkit-box-shadow: 10px 15px 14px 2px rgba(237,163,62,0.75);
+-moz-box-shadow: 10px 15px 14px 2px rgba(237,163,62,0.75); */
+/* -webkit-box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1), 0px 6px 0px 4px rgba(0,0,0,0.1), 0px 9px 0px 6px rgba(0,0,0,0.1), 5px 5px 5px 5px rgba(0,0,0,0); 
+box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1), 0px 6px 0px 4px rgba(0,0,0,0.1), 0px 9px 0px 6px rgba(0,0,0,0.1), 5px 5px 5px 5px rgba(0,0,0,0); */
+    /* border-radius: 25%; */
+}
+.img-front-page-div{
+    margin-right: 4rem;
+}
+.food-section{
+    background-color: #f7d6a9;
+    border-bottom:2px dashed #eb9928;
+}
+.container{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+li{
+    text-decoration: none;
+}
+ul{ 
+    margin-top: 1rem;
+
+    list-style: none;
+}
+.link-button-1{
+    background-color: #eda33e;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.link-button-2{
+    background-color: #eda33e;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.link-button-3{
+    background-color: #f7d6a9;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.logo-img{
+    width: 5rem;
+    height: 5rem;
+    image-rendering: pixelated;
+}
+h1{
+    font-family: 'Shizuru', cursive;
+text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+}
+.larger-h1{
+    font-size: 3.8rem;
+}
+.larger-p1{
+    font-size: 1.6rem;
+}
+.img-for-recipes{
+    width: 15rem;
+    height: 15rem;
+    image-rendering: pixelated;
+}
+h4{
+    font-family: 'Shizuru', cursive;
+    font-weight:600;
+}
+.recipes{
+    border: 1px solid black;
+    /* -webkit-box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1), 0px 6px 0px 4px rgba(0,0,0,0.1), 0px 9px 0px 6px rgba(0,0,0,0.1), 5px 5px 5px 5px rgba(0,0,0,0); 
+box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1), 0px 6px 0px 4px rgba(0,0,0,0.1), 0px 9px 0px 6px rgba(0,0,0,0.1), 5px 5px 5px 5px rgba(0,0,0,0); */
+    padding: 2rem;
+    border-radius: 5%;
+    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+.hero-text-box{
+    padding: 5rem 5rem 5rem 20rem;
+    margin: 0px auto;
+    padding-top: 5rem;
+    /* margin-left: 1rem; */
+
+}
+.top-recipes{
+    margin: 0px auto;
+    max-width: 80rem;
+    /* background-color: #eda33e; */
+}
+.create-recipe{
+    background-color: #eda33e;
+    margin-bottom: 10rem;
+}
+.image-view-one{
+    margin-bottom: 5rem;
+    height: 40rem;
+    width: 40rem;
+    border: 5px dashed black;
+}
+.ingredients{
+    font-size: 1.4rem;
+    image-rendering: pixelated;
+}

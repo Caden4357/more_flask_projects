@@ -1,0 +1,38 @@
+{% extends "base.html" %}  
+{% block content %}
+    <div class="row justify-content-center">
+        <h1 class="text-center m-5">Post a new recipe</h1>
+        <div class="col-3 create-recipe p-5">
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+            <form action="/create/recipe" method="post" enctype=multipart/form-data>
+                <label class="form-label" >Name of dish</label>
+                <input class="form-control" type="text" name="name">
+                <label class="form-label" >Ingredients (Seperate by comma)</label>
+                <textarea class="form-control" name="ingredients" cols="30" rows="10"></textarea>
+                <button class="btn link-button-3 mt-3">Add Recipe</button>
+        </div>
+        <div class="col-3 create-recipe p-5">
+            <label class="form-label" >Instructions (Seperate by comma)</label>
+            <textarea class="form-control" name="instructions" cols="30" rows="10"></textarea>
+            <label class="form-label" >Date Made</label>
+            <input class="form-control" type="date" name="date_made">
+            <label class="form-label" >Under 30 minute cook time?</label>
+            <br>
+            <input type="radio" name="under_30" value="1">
+            <label class="form-label" >Yes</label>
+            <input type="radio" name="under_30" value="0">
+            <label class="form-label" >No</label>
+            <label for="file-upload" class="custom-file-upload">
+                Upload a picture of your delicous meal 
+            </label>
+            <input id="file-upload" type=file name=file>
+        </form>
+        </div>
+    </div>  
+{% endblock %}
