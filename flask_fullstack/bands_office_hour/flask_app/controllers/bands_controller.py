@@ -16,7 +16,7 @@ def create_band():
     band.Band.create_band(request.form)
     return redirect('/')
 
-# @app.errorhandler(404)
-# def not_found(e):
-#     print(f'this is the type of e {type(e)}')
-#     return render_template('404_error.html', error=e)
+@app.errorhandler(404)
+def not_found(e):
+    print(f'this is the type of e {type(e)}')
+    return render_template('404_error.html', error=e)
