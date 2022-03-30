@@ -4,6 +4,7 @@ class Human:
         self.name = data['name']
         self.age = data['age']
         self.health = 100
+        self.max_health = 100
         self.stamina = 20
         self.strength = strength
         
@@ -18,10 +19,10 @@ class Human:
         return self
 
     def eat(self):
-        if self.health == 100:
+        if self.health == self.max_health:
             print("Your at full health")
-        elif self.health + 5 > 100:
-            self.health = 100
+        elif self.health + 5 > self.max_health:
+            self.health = self.max_health
         else:
             self.health += 5
         return self

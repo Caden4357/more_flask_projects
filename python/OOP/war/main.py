@@ -18,12 +18,14 @@ jaxson_dict = {
 }
 
 chad = Warrior(chads_dict)
-chad.level_up().birthday().display_info()
+# chad.level_up().birthday().display_info()
 jaxson = Warrior(jaxson_dict,50)
-jaxson.display_info()
+# jaxson.display_info()
+# chad.attack(jaxson)
+# chad.display_info()
+# chad.display_info().increase_stamina().display_info()
 chad.attack(jaxson)
-chad.display_info()
-chad.display_info().increase_stamina().display_info()
+jaxson.display_info().heal().display_info()
 
 
 # TESTING COSUMABLES/BACKPACK
@@ -53,4 +55,5 @@ stamina_elixir = Consumable(stamina_elx)
 hp_elixir = Consumable(hp_elx)
 strength_boost = Consumable(strength_boost_dict)
 stamina_elixir.show_info()
+jaxson.attack(chad).attack(chad)
 chad.pickup_item(hp_elixir).pickup_item(stamina_elixir).pickup_item(hp_elixir).show_backpack_items().use_item(hp_elixir).show_backpack_items().display_info()

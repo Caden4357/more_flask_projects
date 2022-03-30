@@ -20,5 +20,5 @@ class Backpack:
             if item.id == item_to_consum.id:
                 print(f"consuming {item_to_consum.name} ")
                 self.items.remove(item)
-                print(f"removed {item_to_consum.name} from backpack")
+                print(f"removed {item_to_consum.name} from inventory")
                 return self

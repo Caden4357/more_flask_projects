@@ -22,7 +22,8 @@ class Warrior(Human):
     def level_up(self):
         self.level += 1
         self.strength += 5 
-        self.health += 5
+        self.max_health += 5
+        self.health = self.max_health
         print(f"leveled up strength and health your are now level {self.level}")
         return self 
     
@@ -33,6 +34,7 @@ class Warrior(Human):
             print(f"Noble warrior {self.name} has fallen")
         else: opponent.health -= attack_power
         print(f"{self.name} attacked {opponent.name} for {attack_power} damage {opponent.name}'s health is now: {opponent.health}")
+        return self
     
     def pickup_item(self, item):
         self.backpack.add_item(item)
@@ -45,7 +47,7 @@ class Warrior(Human):
 
     def use_item(self, item):
         if item.name == "health flask":
-            # if item.effect_amount + self.health < 
-            self.health += item.effect_amount
+            if item.effect_amount + self.health < self.max_health:
+                self.health += item.effect_amount
         self.backpack.consum_item(item)
         return self
