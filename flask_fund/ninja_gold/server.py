@@ -9,7 +9,7 @@ def index():
     if 'total_gold' and 'activities' not in session:
         session['total_gold'] = 0
         session['activities'] = ""
-    return render_template('index.html', messages=session['activities'])
+    return render_template('index.html')
 
 @app.route('/process_money', methods=['POST'])
 def process_gold():
