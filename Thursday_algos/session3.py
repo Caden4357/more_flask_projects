@@ -32,8 +32,6 @@ def bon_appetit(bill, k, b):
         return change
 print(bon_appetit([72, 53, 60, 66, 90, 62, 12, 31, 36, 94],6, 288))
 
-
-
 # Find duplicate letters in a string 
 
 check_string = "Dermatoglypyhicss"
@@ -48,6 +46,24 @@ for s in check_string:
 for key in count:
     if count[key] > 1:
         print(key, count[key])
+
+# You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+
+lst = [5,8,6,3,4]
+lst_odd = sorted(num for num in lst if num%2 != 0)
+print(lst)
+odd_int = 0
+for i in range(len(lst)):
+    if lst[i] %2 != 0:
+        lst[i] = lst_odd[odd_int]
+        odd_int += 1
+    print(lst)
+
+    
+
+
+
+
 
 
 # Neither of these binary converters seem to work correctly the first I wrote second I found online 
