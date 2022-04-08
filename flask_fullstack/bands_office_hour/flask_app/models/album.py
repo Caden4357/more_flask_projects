@@ -10,6 +10,7 @@ class Album:
         self.genre = data['genre']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
+        self.band = None
 
     @classmethod
     def get_all(cls):

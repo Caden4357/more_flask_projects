@@ -10,11 +10,15 @@
 </head>
 <body>
     <div class='container'>
-        <a href="/">Home</a>
-        <h1>View One</h1>
-        <h2>Full Name: {{this_user.f_name}} {{this_user.l_name}}</h2>
-        <h2>Email: {{this_user.email}}</h2>
-        <h2>Last Updated On: {{this_user.updated_at.strftime("%B, %d, %Y")}}</h2>
+        <h1>{{this_band.band_name}}</h1>
+        <h2>Albums</h2>
+        <hr>
+        {% for album in this_band.albums %} 
+            <h3>Album Name: {{album.album_name}}</h3>
+            <h3>Release Date: {{album.release_date.strftime("%B, %d, %Y")}}</h3>
+            <h3>Genre: {{album.genre}}</h3>
+            <hr>
+        {%endfor%}
     </div>
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>

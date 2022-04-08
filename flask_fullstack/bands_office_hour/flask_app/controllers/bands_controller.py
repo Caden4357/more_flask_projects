@@ -16,6 +16,13 @@ def create_band():
     band.Band.create_band(request.form)
     return redirect('/')
 
+@app.route('/band/<int:id>')
+def one_band(id):
+    data = {
+        "id":id
+    }
+    return render_template("one_band.html", this_band=band.Band.get_one_band_with_albums(data))
+
 @app.errorhandler(404)
 def not_found(e):
     print(f'this is the type of e {type(e)}')

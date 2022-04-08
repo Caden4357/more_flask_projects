@@ -10,15 +10,15 @@
 </head>
 <body>
     <div class='container'>
-        <a href="/">Home</a>
-        <h1>Edit User {{this_user.id}} {{this_user.f_name}} {{this_user.l_name}}</h1>
-        <form action="/update/user/{{this_user.id}}" method="post">
+        <h1>Edit User{{user.id}} {{user.f_name}}</h1>
+        <form action="/update/user/{{user.id}}" method="post">
+            <input type="hidden" name="id" value="{{user.id}}">
             <label for="f_name">First Name:</label>
-            <input type="text" name="f_name" value="{{this_user.f_name}}">
+            <input type="text" name="f_name" value="{{user.f_name}}">
             <label for="l_name">Last Name:</label>
-            <input type="text" name="l_name" value="{{this_user.l_name}}">
+            <input type="text" name="l_name" value="{{user.l_name}}">
             <label for="email">Email:</label>
-            <input type="text" name="email" value="{{this_user.email}}">
+            <input type="text" name="email" value="{{user.email}}">
             <button>Submit</button>
         </form>
     </div>
