@@ -30,25 +30,90 @@ class Band:
         return results
 
     @classmethod
-    def get_one_band_with_albums(cls,data):
-        query = 'SELECT * FROM bands JOIN albums ON bands.id = albums.band_id WHERE bands.id = %(id)s'
+    def get_one_with_albums(cls,data):
+        query = 'SELECT * FROM bands JOIN albums on bands.id = albums.band_id WHERE bands.id = %(id)s'
         results = connectToMySQL(cls.db_name).query_db(query, data)
         print(results)
         this_band = cls(results[0])
-        print(results[0])
-        print(this_band)
         for row in results:
-            album_data = {
-                'id':row['albums.id'],
+            album_data ={
+                'id': row['albums.id'],
                 'album_name': row['album_name'],
-                'release_date':row['release_date'],
+                'release_date': row['release_date'],
                 'genre': row['genre'],
-                'created_at':row['albums.created_at'],
-                'updated_at':row['albums.updated_at']
+                'created_at': row['albums.created_at'],
+                'updated_at': row['albums.updated_at'],
             }
             this_album = album.Album(album_data)
             this_band.albums.append(this_album)
         return this_band
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # @classmethod
+    # def get_one_band_with_albums(cls,data):
+    #     query = 'SELECT * FROM bands JOIN albums ON bands.id = albums.band_id WHERE bands.id = %(id)s'
+    #     results = connectToMySQL(cls.db_name).query_db(query, data)
+    #     print(results)
+    #     this_band = cls(results[0])
+    #     print(results[0])
+    #     print(this_band)
+    #     for row in results:
+    #         album_data = {
+    #             'id':row['albums.id'],
+    #             'album_name': row['album_name'],
+    #             'release_date':row['release_date'],
+    #             'genre': row['genre'],
+    #             'created_at':row['albums.created_at'],
+    #             'updated_at':row['albums.updated_at']
+    #         }
+    #         this_album = album.Album(album_data)
+    #         this_band.albums.append(this_album)
+    #     return this_band
 
 
 

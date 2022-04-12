@@ -10,14 +10,20 @@
 </head>
 <body>
     <div class='container'>
-        <h1>{{this_band.band_name}}</h1>
-        <h2>Albums</h2>
-        <hr>
+        <div class="nav-custom">
+            <a href="/new/band">Post your favorite band</a>
+            <h1>Welcome To The Best Website Ever</h1>
+            <a href="/new/album">Post your favorite album</a>
+            <a href="/">Home</a>
+        </div>
+        <h1>Band Name: {{this_band.band_name}}</h1>
+        <h4>Year Formed: {{this_band.year_formed}}</h4>
+        <h4>{{this_band.band_name}}'s Albums</h4>
+        <!-- Display all the bands albums -->
         {% for album in this_band.albums %} 
-            <h3>Album Name: {{album.album_name}}</h3>
-            <h3>Release Date: {{album.release_date.strftime("%B, %d, %Y")}}</h3>
-            <h3>Genre: {{album.genre}}</h3>
-            <hr>
+            <p>Album Name: {{album.album_name}}</p>
+            <p>Release Date: {{album.release_date}}</p>
+            <p>Genre: {{album.genre}}</p>
         {%endfor%}
     </div>
 

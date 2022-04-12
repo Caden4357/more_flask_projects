@@ -17,13 +17,11 @@ def create_band():
     return redirect('/')
 
 @app.route('/band/<int:id>')
-def one_band(id):
-    data = {
-        "id":id
+def view_one_band_with_albums(id):
+    # call to our view one with albums class method 
+    # pass that into our html
+    data ={ 
+        'id': id
     }
-    return render_template("one_band.html", this_band=band.Band.get_one_band_with_albums(data))
+    return render_template('one_band.html', this_band = band.Band.get_one_with_albums(data))
 
-@app.errorhandler(404)
-def not_found(e):
-    print(f'this is the type of e {type(e)}')
-    return render_template('404_error.html', error=e)

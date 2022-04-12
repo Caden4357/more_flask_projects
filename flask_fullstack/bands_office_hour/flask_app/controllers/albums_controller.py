@@ -1,6 +1,11 @@
 from flask_app import app 
-from flask import render_template, jsonify, request, redirect
+from flask import render_template, request, redirect
 from ..models import band, album
+
+
+@app.route('/top/albums')
+def top_albums():
+    return render_template('top_albums.html', all_albums = album.Album.get_all())
 
 @app.route('/new/album') 
 def new_album():
@@ -17,5 +22,6 @@ def create_album():
     }   
     album.Album.create_album(form_info)
     return redirect('/')
+
 
 

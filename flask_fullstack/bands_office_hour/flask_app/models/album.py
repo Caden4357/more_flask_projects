@@ -1,5 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
+from ..models import band
 
 class Album:
     db_name = "bands_schema"
@@ -14,9 +15,24 @@ class Album:
 
     @classmethod
     def get_all(cls):
-        query = 'SELECT * FROM albums'
+        query = 'SELECT * FROM albums JOIN bands ON albums.band_id = bands.id;'
         results = connectToMySQL(cls.db_name).query_db(query)
-        return results
+        print(results)
+        all_albums = []
+        for row in results:
+            this_album = cls(row)
+            band_data = {
+                'id': row['bands.id'],
+                'band_name': row['band_name'],
+                'origin': row['origin'],
+                'year_formed': row['year_formed'],
+                'created_at': row['bands.created_at'],
+                'updated_at': row['bands.updated_at'],
+            }
+            this_band = band.Band(band_data)
+            this_album.band = this_band
+            all_albums.append(this_album)
+        return all_albums
 
     @classmethod
     def create_album(cls, data):
