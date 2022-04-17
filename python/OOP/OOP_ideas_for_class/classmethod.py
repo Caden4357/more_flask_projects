@@ -6,6 +6,8 @@ class Player:
         self.position = data['position']
         self.team = data['team']
     
+
+    # Creating class objects from a list of dictionaries
     @classmethod
     def add_players(cls, data):
         player_objects = []
@@ -14,11 +16,41 @@ class Player:
         return player_objects
 
 
-players = [{"name": "Kevin Durant", "age":34, "position": "small forward", "team": "Brooklyn Nets"}, {"name": "Jason Tatum", "age":24, "position": "small forward", "team": "Boston Celtics"}]
-print(players)
+    @classmethod
+    def create_one_player(cls, data):
+        return cls(data)
+
+
+    def display_players_info(player_object):
+        for player in player_object:
+            print("--------------------------")
+            print(f"Name: {player.name}\nPosition: {player.position}\nTeam: {player.team}")
+
+
+    def change_name(self, val):
+        self.name = val
+        return self
+
+
+# kyrie_dict = {"name": "Kyrie Irving", "age":32, "position": "Point Guard", "team": "Brooklyn Nets"}
+# kyrie = Player.create_one_player(kyrie_dict)
+# print(kyrie)
+# print(kyrie.name)
+
+
+players = [{"name": "Kevin Durant", "age":34, "position": "small forward", "team": "Brooklyn Nets"},{"name": "Jason Tatum", "age":24, "position": "small forward", "team": "Boston Celtics"},{"name": "Kyrie Irving", "age":32, "position": "Point Guard", "team": "Brooklyn Nets"}]
+
+# print(players)
+
 player_objects = Player.add_players(players)
-print(players[0]['name'])
-print(player_objects[0].name)
+
+# print(player_objects)
+# print(players[0]['name'])
+# print(player_objects[0].name)
+
+Player.change_name(player_objects[0], "Kevin Gurant")
+
 print("-------------Printing All Players-------------------")
-for player in player_objects:
-    print(f"Name: {player.name}\nPosition: {player.position}\nTeam: {player.team}")
+Player.display_players_info(player_objects)
+# for player in player_objects:
+#     print(f"Name: {player.name}\nPosition: {player.position}\nTeam: {player.team}")
