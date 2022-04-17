@@ -21,13 +21,18 @@ class User:
         print(f"Results: {results}")
         return results
 
-
     @classmethod
     def get_by_email(cls, data):
-        query = "SELECT * FROM users WHERE email = %(email)s"
+        query = 'SELECT * FROM users WHERE email=%(email)s'
         results = connectToMySQL(cls.db_name).query_db(query, data)
         if len(results) == 0:
             return False
+        return cls(results[0])
+
+    @classmethod
+    def get_by_id(cls, data):
+        query = 'SELECT * FROM users WHERE id=%(id)s'
+        results = connectToMySQL(cls.db_name).query_db(query, data)
         return cls(results[0])
 
     @staticmethod
@@ -37,35 +42,34 @@ class User:
         user_with_email = User.get_by_email({'email': data['email']})
         if len(data['first_name']) < 1:
             is_valid = False
-            flash('First name must be more than 1 character')
+            flash('First name must be more than 1 character', "register")
         if len(data['last_name']) < 1:
             is_valid = False
-            flash('Last name must be more than 1 character')
+            flash('Last name must be more than 1 character', "register")
         if len(data['email']) == 0:
             is_valid = False
             flash('Enter an email')
         elif not EMAIL_REGEX.match(data['email']):
             is_valid = False
-            flash('Invalid email address')
+            flash('Invalid email address', "register")
         elif user_with_email:
             is_valid = False
-            flash('email already exits')
+            flash('email already exits', "register")
         if len(data['password']) < 6:
             is_valid = False
             flash('Password must be more than 6 characters')
         elif data['password'] != data['confirm_password']:
-            flash("Password don't match")
+            flash("Password don't match", "register")
             is_valid = False
         return is_valid
     
     @staticmethod
     def validate_login(data):
         is_valid = True
-        
         if len(data['email']) == 0:
-            # flash('Invalid email/password')
             is_valid = False
         if len(data['password']) == 0:
-            # flash('Invalid email/password')
             is_valid = False
         return is_valid
+
+

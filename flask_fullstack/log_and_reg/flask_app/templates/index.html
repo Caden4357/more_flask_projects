@@ -24,11 +24,14 @@
             <input class="form-control" type="password" name="confirm_password">
             <input class="btn btn-primary" type="submit" value="Register">
         </form>
-        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
-            {% if messages %}                            <!-- check if there are any messages -->
-                {% for message in messages %}            <!-- loop through the messages -->
-                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
-                {% endfor %}
+        {% with messages = get_flashed_messages(category_filter=['register']) %}
+            {% if messages %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>Flash AHHHHHHH!!!!</strong>
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                </div>
             {% endif %}
         {% endwith %}
         <h1>Log in</h1>
@@ -39,6 +42,16 @@
             <input class="form-control" type="password" name="password">
             <input class="btn btn-primary" type="submit" value="Log in">
         </form>
+        {% with messages = get_flashed_messages(category_filter=['login']) %}
+            {% if messages %}
+                <div class="alert alert-danger">
+                    <strong>Flash AHHHHHHH!!!!</strong>
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
     </div>
 </body>
 </html>
