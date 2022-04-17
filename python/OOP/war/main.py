@@ -44,13 +44,13 @@ stamina_elx = {
     'effect_amount': 10,
     'effect_desc': "Found all over the place, consuming will increase stamina by 10"
 }
-strength_boost_dict = {
-    'id':3,
-    'name': "stamina flask",
-    'effects': "stamina",
-    'effect_amount': 10,
-    'effect_desc': "Found all over the place, consuming will increase stamina by 10"
-}
+# strength_boost_dict = {
+#     'id':3,
+#     'name': "stamina flask",
+#     'effects': "stamina",
+#     'effect_amount': 10,
+#     'effect_desc': "Found all over the place, consuming will increase stamina by 10"
+# }
 stamina_elixir = Consumable(stamina_elx)
 hp_elixir = Consumable(hp_elx)
 strength_boost = Consumable(strength_boost_dict)
