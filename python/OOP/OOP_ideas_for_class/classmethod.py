@@ -20,13 +20,13 @@ class Player:
     def create_one_player(cls, data):
         return cls(data)
 
-
+    @staticmethod
     def display_players_info(player_object):
         for player in player_object:
             print("--------------------------")
             print(f"Name: {player.name}\nPosition: {player.position}\nTeam: {player.team}")
 
-
+    # Instance method
     def change_name(self, val):
         self.name = val
         return self
@@ -48,7 +48,7 @@ player_objects = Player.add_players(players)
 # print(players[0]['name'])
 # print(player_objects[0].name)
 
-Player.change_name(player_objects[0], "Kevin Gurant")
+Player.change_name(player_objects[0], "Kevin Garnett")
 
 print("-------------Printing All Players-------------------")
 Player.display_players_info(player_objects)

@@ -2,9 +2,10 @@ from classes.human import *
 from classes.backpack import Backpack
 
 class Warrior(Human):
-    def __init__(self, data, strength=25):
-        super().__init__(data, strength)
-        self.level = data['level']
+    def __init__(self, data):
+        super().__init__(data)
+        self.level = 20
+        self.strength = 25
         self.backpack = Backpack()
     
     def display_info(self):

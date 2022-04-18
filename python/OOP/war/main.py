@@ -9,17 +9,15 @@ from classes.consumables import Consumable
 chads_dict = {
     'name': "Chad The Bro",
     'age': 23,
-    'level': 10
 }
 jaxson_dict = {
     'name': "Jaxson The Mighty",
     'age': 33,
-    'level': 10
 }
 
 chad = Warrior(chads_dict)
 # chad.level_up().birthday().display_info()
-jaxson = Warrior(jaxson_dict,50)
+jaxson = Warrior(jaxson_dict)
 # jaxson.display_info()
 # chad.attack(jaxson)
 # chad.display_info()
@@ -44,13 +42,13 @@ stamina_elx = {
     'effect_amount': 10,
     'effect_desc': "Found all over the place, consuming will increase stamina by 10"
 }
-# strength_boost_dict = {
-#     'id':3,
-#     'name': "stamina flask",
-#     'effects': "stamina",
-#     'effect_amount': 10,
-#     'effect_desc': "Found all over the place, consuming will increase stamina by 10"
-# }
+strength_boost_dict = {
+    'id':3,
+    'name': "stamina flask",
+    'effects': "stamina",
+    'effect_amount': 10,
+    'effect_desc': "Found all over the place, consuming will increase stamina by 10"
+}
 stamina_elixir = Consumable(stamina_elx)
 hp_elixir = Consumable(hp_elx)
 strength_boost = Consumable(strength_boost_dict)
