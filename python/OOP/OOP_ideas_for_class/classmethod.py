@@ -20,11 +20,13 @@ class Player:
     def create_one_player(cls, data):
         return cls(data)
 
+
     @staticmethod
     def display_players_info(player_object):
         for player in player_object:
             print("--------------------------")
             print(f"Name: {player.name}\nPosition: {player.position}\nTeam: {player.team}")
+
 
     # Instance method
     def change_name(self, val):
@@ -38,7 +40,9 @@ class Player:
 # print(kyrie.name)
 
 
-players = [{"name": "Kevin Durant", "age":34, "position": "small forward", "team": "Brooklyn Nets"},{"name": "Jason Tatum", "age":24, "position": "small forward", "team": "Boston Celtics"},{"name": "Kyrie Irving", "age":32, "position": "Point Guard", "team": "Brooklyn Nets"}]
+
+
+players = [{"name": "Kevin Durant", "age":34, "position": "small forward", "team": "Brooklyn Nets"},{"name": "Jason Tatum", "age":24, "position": "small forward", "team": "Boston Celtics"},{"name": "Kyrie Irving", "age":32, "position": "Point Guard", "team": "Brooklyn Nets"},{"name": "Damian Lillard", "age":33, "position": "Point Guard", "team": "Portland Trailblazers"},{"name": "Joel Embiid", "age":32, "position": "Power Foward", "team": "Philidelphia 76ers"}]
 
 # print(players)
 
