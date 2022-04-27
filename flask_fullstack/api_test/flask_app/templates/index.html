@@ -10,8 +10,10 @@
 <body>
     <div class='container'>
         <h1 class="text-center">Are you bored?</h1>
-        <h1 id="activity-text"></h1>
-        <button id="button" onclick="getCoderData()">Bored click this button to find something to do</button>
+        <div id="answer">
+            <h1 id="activity-text"></h1>
+        </div>
+        <button id="button">Bored click this button to find something to do</button>
     </div>
 
 <script src="{{url_for('static', filename='script.js')}}"></script>

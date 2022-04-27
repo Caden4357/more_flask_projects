@@ -60,6 +60,10 @@ def view_one(recipe_id):
     this_recipe = recipe.Recipe.view_one(data)
     return render_template('view_one_recipe.html', this_recipe = this_recipe, x=0)
 
+@app.route('/edit/<int:id>')
+def edit(id):
+    return render_template('edit.html', this_recipe = recipe.Recipe.view_one({'id':id}))
+
 @app.errorhandler(404)
 def not_found(e):
     return f'Bad URL' 
