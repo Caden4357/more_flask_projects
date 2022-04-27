@@ -73,20 +73,20 @@ class Player:
 players = [{"name": "Kevin Durant", "age":34, "position": "small forward", "team": "Brooklyn Nets"},{"name": "Jason Tatum", "age":24, "position": "small forward", "team": "Boston Celtics"},{"name": "Kyrie Irving", "age":32, "position": "Point Guard", "team": "Brooklyn Nets"},{"name": "Damian Lillard", "age":33, "position": "Point Guard", "team": "Portland Trailblazers"},{"name": "Joel Embiid", "age":32, "position": "Power Foward", "team": "Philidelphia 76ers"},{"name": "", "age":16, "position": "P", "team": "en"}]
 
 
-valid = Player.validate_player(players)
-print(valid)
-# print(players)
+# valid = Player.validate_player(players)
+# print(valid)
+print(players)
 
-# player_objects = Player.add_players(players)
+player_objects = Player.add_players(players)
 
 # * show the difference between the players and player_objects make note that players does not change its still just a list of dicts also not how to access key value pairs from a list of dictionaries is different than a list of objects 
-# print(players)
-# print(player_objects)
-# print(players[0]['name'])
-# print(player_objects[0].name)
+print(players)
+print(player_objects)
+print(players[0]['name'])
+print(player_objects[0].name)
 
 # * calling the instance method 
 # Player.change_name(player_objects[0], "Kevin Garnett")
 
 # print("-------------Printing All Players-------------------")
-# Player.display_players_info(player_objects)
+Player.display_players_info(player_objects)

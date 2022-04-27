@@ -1,11 +1,12 @@
 import requests
 
 # url = "https://api-nba-v1.p.rapidapi.com/games"
-url = "https://api-nba-v1.p.rapidapi.com/players/statistics"
+url = "https://api-nba-v1.p.rapidapi.com/players/statistics/"
 # querystring = {"date":"2022-04-17"}
 # querystring = {"season":"2021"}
-player_stats = {"season":2019, "id":319}
-player_name = {"name": "Lillard"}
+# player_stats = {"season":2019, "id":319} #Damian Lillard's id
+player_stats = {"season":2018, "id":124} #Steph curry's id
+player_name = {"name": "curry"}
 
 headers = {
 	"X-RapidAPI-Host": "api-nba-v1.p.rapidapi.com",
