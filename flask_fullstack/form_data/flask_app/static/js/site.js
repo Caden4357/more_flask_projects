@@ -16,7 +16,6 @@ window.onload = () => {
             users.appendChild(row);
         }
     })
-
 }
 var myForm = document.getElementById('myForm');
 myForm.onsubmit = function(e){
@@ -67,7 +66,6 @@ myForm.onsubmit = function(e){
                     users.appendChild(row);
             })
         myForm.reset()
-
     }
 }
 
