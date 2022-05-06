@@ -9,11 +9,22 @@
 </head>
 <body>
     <div class='container'>
-        <h1>Welcome to Coin Tracker</h1>
-        <h1>TESTING API CALL WITH CALLING BITCOIN</h1>
+        <h1 class="text-center">Welcome to Coin Tracker</h1>
+        <h1 class="text-center">Here are the top coins today!</h1>
+        <!-- <h1 class="text-center mb-5">TESTING API CALL WITH CALLING BITCOIN</h1> -->
 
-        {{desc|safe}}
-        <h1>Price: {{price}}</h1>
+        <div class="row d-flex justify-content-center">
+            <div class="col-8 d-flex flex-wrap">
+                {#
+                    {{desc|safe}}
+                    <h1>Price: {{price}}</h1>
+                #}
+                {% for coin in coins %} 
+                    <h2 class="p-3">{{coin}}</h2>
+                {%endfor%}
+            </div>
+        </div>
+
     </div>
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>

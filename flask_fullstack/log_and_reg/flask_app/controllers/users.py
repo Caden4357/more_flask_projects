@@ -10,7 +10,6 @@ def index():
     return render_template('index.html')
 
 
-
 @app.route('/register', methods=['POST'])
 def create_owner():
     if not user.User.validate_registration(request.form):
