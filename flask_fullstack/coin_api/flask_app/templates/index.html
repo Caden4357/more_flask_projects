@@ -9,8 +9,15 @@
 </head>
 <body class="bg-dark">
     <div class='container'>
+        <a style="position:absolute; right:10rem; top:20px;" class = "btn btn-primary" href="/register">Don't have an account? start here</a>
+
         <h1 class="text-center text-white">Welcome to Coin Tracker</h1>
-        <h1 class="text-center text-white">Here are the top coins today!</h1>
+        <h1 class="text-center text-white">Here are the top coins today ordered by:</h1>
+        <h1 class="text-center text-white">Top Fifty {{order_query}}!</h1>
+        <!-- WANT TO ADD THESE FEATURES AND MORE FOR FILTERING CRYPTO -->
+        <a class = "btn btn-primary mb-5" href="/">Home</a>
+        <a class = "btn btn-primary mb-5" href="price">Top 50 By Price</a>
+        <a class = "btn btn-primary mb-5" href="marketCap">Top 50 By Market Cap</a>
         <!-- <h1 class="text-center mb-5">TESTING API CALL WITH CALLING BITCOIN</h1> -->
         <form action="/search/coin" method="post">
             <label class="text-white" for="search_string">Search coins:</label>
@@ -24,6 +31,7 @@
                 <div class="border border-light m-5 bg-secondary" style="width: 200px; height: 200px;" >
                     <img src="{{coin['icon']}}" alt="icon" style="width: 40px; height: 30px;">
                     <h2 class="text-center"><a href="/{{coin['name']}}/{{coin['id']}}">{{coin['name']}}</a></h2>
+                    <p class="text-center text-white">Rank: {{coin['rank']}}</p>
                 </div>
                 {%endfor%}
             </div>

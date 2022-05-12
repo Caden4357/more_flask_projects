@@ -6,7 +6,7 @@ class Player:
         self.name = data['name']
         self.age = data['age']
         self.position = data['position']
-        self.team = data['team']
+        self.team = None
     
 
     # * Creating class objects from a list of dictionaries
@@ -33,9 +33,9 @@ class Player:
 
 
     # * Showing off an instance method not really anything special but open to ideas on more 
-    def change_name(self, val):
-        self.name = val
-        return self
+    def show_player_info(self):
+        print(f'{self.name} is {self.age} years old and plays for the {self.team.city} {self.team.team_name}')
+
 
 
     # * this staticmethod is almost the same as one we would write in flask to validate our forms 
@@ -70,14 +70,14 @@ class Player:
 
 
 # * a list of dictionaries is what comes back from sql querys in flask so its good to get them used to looking at this 
-players = [{"name": "Kevin Durant", "age":34, "position": "small forward", "team": "Brooklyn Nets"},{"name": "Jason Tatum", "age":24, "position": "small forward", "team": "Boston Celtics"},{"name": "Kyrie Irving", "age":32, "position": "Point Guard", "team": "Brooklyn Nets"},{"name": "Damian Lillard", "age":33, "position": "Point Guard", "team": "Portland Trailblazers"},{"name": "Joel Embiid", "age":32, "position": "Power Foward", "team": "Philidelphia 76ers"},{"name": "", "age":16, "position": "P", "team": "en"}]
+# players = [{"name": "Kevin Durant", "age":34, "position": "small forward", "team": "Brooklyn Nets"},{"name": "Jason Tatum", "age":24, "position": "small forward", "team": "Boston Celtics"},{"name": "Kyrie Irving", "age":32, "position": "Point Guard", "team": "Brooklyn Nets"},{"name": "Damian Lillard", "age":33, "position": "Point Guard", "team": "Portland Trailblazers"},{"name": "Joel Embiid", "age":32, "position": "Power Foward", "team": "Philidelphia 76ers"},{"name": "", "age":16, "position": "P", "team": "en"}]
 
 
-valid = Player.validate_player(players)
-print(valid)
-print(players)
+# valid = Player.validate_player(players)
+# print(valid)
+# print(players)
 
-player_objects = Player.add_players(players)
+# player_objects = Player.add_players(players)
 
 # * show the difference between the players and player_objects make note that players does not change its still just a list of dicts also not how to access key value pairs from a list of dictionaries is different than a list of objects 
 # print(players)
@@ -89,4 +89,4 @@ player_objects = Player.add_players(players)
 # Player.change_name(player_objects[0], "Kevin Garnett")
 
 # print("-------------Printing All Players-------------------")
-Player.display_players_info(player_objects)
+# Player.display_players_info(player_objects)
