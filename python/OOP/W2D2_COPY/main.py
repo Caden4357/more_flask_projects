@@ -57,20 +57,20 @@ suns = Team({
 # kevin.team = nets
 # kyrie.team = nets
 
-devon.team = suns
-chris.team = suns
+suns.display_team_info()
 
-# nets_team = Player.add_players(players)
+# player_objs = Player.add_players(players)
 
 
-# print(nets_team)
-nets.add_to_roster(Player.add_players(players))
+# print(player_objs)
+# nets.add_to_roster(Player.add_players(players))
 # print(nets.roster)
-nets.display_team_info()
-
+# nets.display_team_info()
 # kevin.team.display_team_info()
 # nets.roster.append(kevin)
 # nets.roster.append(kyrie)
-# kevin.display_player_info()
-# kevin.play_game(35,40)
+# devon.play_game(35, nets)
+# suns.roster.append(devon)
+# devon.display_player_info()
+
 # nets.display_team_info()

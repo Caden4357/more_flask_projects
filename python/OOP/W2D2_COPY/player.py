@@ -19,13 +19,21 @@ class Player:
         self.total_points = data['total_points']
         self.team = None
 
+
     # This is an instance method it takes in self 
     def display_player_info(self):
         print(f'Name: {self.name}, Position: {self.position}, Team: The {self.team.t_name}, Total Career Points: {self.total_points}')
+        return self 
 
-    def play_game(self, points_scored, min_played):
+    def play_game(self, points_scored, opponent):
         self.total_points += points_scored
-        print(f'{self.name} Played {min_played} minutes and scored {points_scored} points')
+        print(f'{self.name} scored {points_scored} points against the {opponent.t_name}')
+        return self 
+    
+    def add_to_team(self,franchise):
+        self.team = franchise
+        franchise.roster.append(self)
+        return self
 
     @classmethod
     def add_players(cls,data):
@@ -33,5 +41,6 @@ class Player:
         for dict in data:
             list_of_player_objs.append(cls(dict))
         return list_of_player_objs
+        
 
 

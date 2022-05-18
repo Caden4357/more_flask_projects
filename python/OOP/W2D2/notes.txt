@@ -1,6 +1,0 @@
--Start by talking about the assignment that were going to be covering and why we want to associate classes together give a brief over view of everything 
--Start with changing the class slightly add is_active and total_points and take out age also alter team to start as none explain that this will later be where we store the team object that is associated to a given player 
-- Write display player info and test out the constructor also write play game function that displays a f string with the player name how many pts scored and min played and increases their total_points by the pts scored 
-- Ask if theres questions
-- Create the team class also use this as an oppoturnity to modularize the code keep it clean and easier to read 
-- write display team info get help from the class 

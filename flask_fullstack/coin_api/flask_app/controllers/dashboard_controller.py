@@ -2,7 +2,7 @@ from flask import Flask, render_template,redirect,jsonify,request,session
 from flask_app import app
 import requests
 
-@app.route('/')
+@app.route('/home')
 def index():
     url = "https://coinranking1.p.rapidapi.com/coins"
 # orderBy must be one of price, marketCap, 24hVolume, change, listedAt
@@ -36,8 +36,10 @@ def index():
 def filter_coins(order_by):
     if order_by == "price":
         order_query = "Price"
+    elif order_by == "home":
+        return redirect('/home')
     else:
-        order_query = "Market Cap"
+        order_query = "MarketCap"
     url = "https://coinranking1.p.rapidapi.com/coins"
 # orderBy must be one of price, marketCap, 24hVolume, change, listedAt
     querystring = {"referenceCurrencyUuid":"yhjMzLPhuIDl","timePeriod":"24h","tiers[0]":"1","orderBy":order_by,"orderDirection":"desc","limit":"20","offset":"0"}
@@ -51,6 +53,7 @@ def filter_coins(order_by):
 
     # print(response.text)
     data = response.json()['data']['coins']
+    # print(data)
     # print(data)
     # data = data['data']['coins']
     lst_of_coins = []

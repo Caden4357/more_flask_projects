@@ -1,3 +1,22 @@
+# class Player:
+#     def __init__(self, name, age, position, team):
+#         self.name = name
+#         self.age = age
+#         self.position = position
+#         self.team = team
+
+
+# kevin = Player("kevin Durant", 34, "small forward", "brooklyn nets")
+
+
+# kevin = Player({
+#     "name": "Kevin Durant", 
+#     "age":34, 
+#     "position": "small forward", 
+#     "team": "Brooklyn Nets"
+# })
+
+
 class Player:
     def __init__(self, data):
         self.name = data['name']
@@ -6,20 +25,23 @@ class Player:
         self.total_points = data['total_points']
         self.team = None
 
-    # This is an instance method it takes in self 
     def display_player_info(self):
-        self.team.display_team_info()
-        print(f'Name: {self.name}, Position: {self.position}, Team: The {self.team.t_name}, Total Career Points: {self.total_points}')
+        print(f'{self.name} plays {self.position} for the {self.team.t_name} and has {self.total_points} total career points')
+        return self
 
-    def play_game(self, points_scored, opponent):
-        self.total_points += points_scored
-        print(f'{self.name} scored {points_scored} points against the {opponent.t_name}')
+    def add_to_team(self,franchise):
+        self.team = franchise
+        franchise.roster.append(self)
+        return self
 
     @classmethod
-    def add_players(cls,data):
-        list_of_player_objs = []
-        for dict in data:
-            list_of_player_objs.append(cls(dict))
-        return list_of_player_objs
+    def add_players(cls, data):
+        lst_of_players = []
+        for player in data:
+            this_player = cls(player)
+            lst_of_players.append(this_player)
+        return lst_of_players
+
+
 
 

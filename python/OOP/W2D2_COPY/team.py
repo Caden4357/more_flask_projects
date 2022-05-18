@@ -1,6 +1,7 @@
 
 class Team:
-    # league = "USA"
+    league = "USA"
+    # season = 2022
     def __init__(self, data):
         self.t_name = data['t_name']
         self.city = data['city']
@@ -17,4 +18,3 @@ class Team:
             self.roster.append(player)
         return self
         
-    
