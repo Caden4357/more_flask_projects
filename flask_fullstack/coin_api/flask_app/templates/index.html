@@ -29,9 +29,9 @@
             <div class="col d-flex flex-wrap">
                 {% for coin in coins %} 
                 <div class="border border-light m-5 bg-secondary" style="width: 200px; height: 200px;" >
-                    <img src="{{coin['icon']}}" alt="icon" style="width: 40px; height: 30px;">
-                    <h2 class="text-center"><a href="/{{coin['name']}}/{{coin['id']}}">{{coin['name']}}</a></h2>
-                    <p class="text-center text-white">Rank: {{coin['rank']}}</p>
+                    <img src="{{coin.icon}}" alt="icon" style="width: 40px; height: 30px;">
+                    <h2 class="text-center"><a href="/{{coin.name}}/{{coin.id}}">{{coin.name}}</a></h2>
+                    <p class="text-center text-white">Rank: {{coin.rank}}</p>
                 </div>
                 {%endfor%}
             </div>

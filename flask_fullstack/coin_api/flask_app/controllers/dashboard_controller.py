@@ -1,7 +1,7 @@
 from flask import Flask, render_template,redirect,jsonify,request,session
 from flask_app import app
 import requests
-
+from flask_app.models.coin import Coin
 @app.route('/home')
 def index():
     url = "https://coinranking1.p.rapidapi.com/coins"
@@ -24,12 +24,14 @@ def index():
         # print(coin['name'])
         lst_of_coins.append({
             'name': coin['name'],
-            'id': coin['uuid'],
-            'icon': coin['iconUrl'],
-            'rank': coin['rank']
+            'uuid': coin['uuid'],
+            'iconUrl': coin['iconUrl'],
+            'rank': coin['rank'],
+            'price': coin['price']
             })
     # print(lst_of_coins)
-    return render_template('index.html', coins = lst_of_coins, order_query="24 hour volume")
+    final_coin_list = Coin.add_coins(lst_of_coins)
+    return render_template('index.html', coins = final_coin_list, order_query="24 hour volume")
 
 
 @app.route('/<string:order_by>')
@@ -83,6 +85,7 @@ def view_one_coin(name, id):
     response = requests.request("GET", url, headers=headers, params=querystring)
     # ! NEED TO FORMAT THIS TO A DICT SHOULD I MAKE CLASS OBJECTS AS WELL?
     data = response.json()
+    print(f"DATA: {data}")
     # print(data)
     desc = data['data']['coin']['description']
     # get the price
