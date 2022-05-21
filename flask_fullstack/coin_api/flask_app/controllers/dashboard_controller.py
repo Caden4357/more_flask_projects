@@ -17,7 +17,7 @@ def index():
 
     # print(response.text)
     data = response.json()['data']['coins']
-    # print(data)
+    print(data)
     # data = data['data']['coins']
     lst_of_coins = []
     for coin in data:
