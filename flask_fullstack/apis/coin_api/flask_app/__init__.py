@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 import os 
 from dotenv import load_dotenv
 load_dotenv()
@@ -6,6 +7,8 @@ app = Flask(__name__)
 app.config['API_KEY'] = os.environ.get("API_KEY")
 app.config['API_HOST'] = os.environ.get("API_HOST")
 
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("MYSQL_URI")
+db = SQLAlchemy(app)
 
 # user = 'root'
 # password = 'root'

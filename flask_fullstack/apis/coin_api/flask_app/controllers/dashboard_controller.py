@@ -1,8 +1,8 @@
 from flask import Flask, render_template,redirect,jsonify,request,session
 from flask_app import app
 import requests
-from flask_app.models.coin import Coin
-from flask_app.models.user import User
+from flask_app.models.tables import User, Purchase
+
 @app.route('/home')
 def index():
     url = "https://coinranking1.p.rapidapi.com/coins"
@@ -31,8 +31,8 @@ def index():
             'price': coin['price']
             })
     # print(lst_of_coins)
-    final_coin_list = Coin.add_coins(lst_of_coins)
-    return render_template('index.html', coins = final_coin_list, order_query="24 hour volume")
+    # final_coin_list = Coin.add_coins(lst_of_coins)
+    return render_template('index.html', coins = data, order_query="24 hour volume")
 
 
 @app.route('/<string:order_by>')
