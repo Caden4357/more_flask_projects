@@ -8,6 +8,9 @@ class Coin:
         self.rank = data['rank']
         self.price = data['price']
 
+
+
+
     @classmethod
     def add_coins(cls, data):
         coins = []

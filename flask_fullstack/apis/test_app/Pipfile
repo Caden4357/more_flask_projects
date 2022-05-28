@@ -4,9 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask = "==2.0.3"
-requests = "*"
-python-dotenv = "*"
+flask = "*"
 flask-sqlalchemy = "*"
 mysqlclient = "*"
 

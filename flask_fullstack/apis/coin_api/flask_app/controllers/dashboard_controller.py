@@ -2,6 +2,7 @@ from flask import Flask, render_template,redirect,jsonify,request,session
 from flask_app import app
 import requests
 from flask_app.models.coin import Coin
+from flask_app.models.user import User
 @app.route('/home')
 def index():
     url = "https://coinranking1.p.rapidapi.com/coins"

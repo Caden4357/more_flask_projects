@@ -1,18 +1,15 @@
 
+import datetime
+from flask_sqlalchemy import SQLAlchemy
+from flask_app import app
+import os 
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("MYSQL_URI")
+db = SQLAlchemy(app)
 
-class User:
-    def __init__(self, data):
-        self.id = data['id']
-        self.f_name = data['f_name']
-        self.l_name = data['l_name']
-        self.username = data['username']
-        self.email = data['email']
-        self.password = data['password']
-        self.created_at = data['created_at']
-        self.updated_at = data['updated_at']
-        self.coin_wallet = []
-        self.watchlist = []
-
-    
-
-    # ! ADD USER CRUD CLASSMETHODS 
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(255), nullable=False)
+    last_name = db.Column(db.String(255), nullable=False)
+    email = db.Column(db.String(255), nullable=False)
+    password = db.Column(db.String(255), nullable=False)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now(datetime.timezone.utc))
