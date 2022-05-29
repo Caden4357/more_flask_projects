@@ -31,6 +31,9 @@ class User(db.Model):
         elif not EMAIL_REGEX.match(data['email']):
             is_valid = False
             flash('Invalid email address')
+
+        # ! CHECK FOR DUPLICATE EMAILS 
+
         if len(data['password']) < 6:
             is_valid = False
             flash('Password must be more than 6 characters')
