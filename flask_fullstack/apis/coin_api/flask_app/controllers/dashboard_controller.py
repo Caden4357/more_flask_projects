@@ -18,7 +18,7 @@ def index():
 
     # print(response.text)
     data = response.json()['data']['coins']
-    print(data)
+    # print(data)
     # data = data['data']['coins']
     lst_of_coins = []
     for coin in data:
@@ -32,7 +32,7 @@ def index():
             })
     # print(lst_of_coins)
     # final_coin_list = Coin.add_coins(lst_of_coins)
-    return render_template('index.html', coins = data, order_query="24 hour volume")
+    return render_template('index.html', coins = lst_of_coins, order_query="24 hour volume")
 
 
 @app.route('/<string:order_by>')

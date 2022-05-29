@@ -9,6 +9,8 @@ def register_login():
 
 @app.route('/register/user', methods=['POST'])
 def register():
+    if not User.validate_register(request.form):
+        return redirect('/register/login')
     new_user = User(first_name = request.form['fist_name'], last_name = request.form['last_name'], email = request.form['email'], password = request.form['password'])
     db.session.add(new_user)
     db.session.commit()
