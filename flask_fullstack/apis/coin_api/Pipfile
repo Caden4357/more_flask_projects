@@ -9,6 +9,7 @@ requests = "*"
 python-dotenv = "*"
 flask-sqlalchemy = "*"
 mysqlclient = "*"
+flask-login = "*"
 
 [dev-packages]
 
