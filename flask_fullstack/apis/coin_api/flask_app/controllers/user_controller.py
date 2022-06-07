@@ -8,9 +8,11 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 # ! ADD BCRYPT 
 
+
+# ! LEARN MORE ABOUT THIS HOW IS IT WORKING?
 @login_manager.user_loader
 def load_user(user_id):
-    return User.get(user_id)
+    return User.query.filter_by(id=user_id).first()
 
 @app.route('/register/login')
 def register_login():
@@ -23,17 +25,25 @@ def register():
     # ! ADD PASSWORD HASH 
     # ! HOW DO WE GET THE NEW USERS ID IN SESSION? SEEMS LIKE WE NEED FLASK LOGIN 
     new_user = User(first_name = request.form['first_name'], last_name = request.form['last_name'], email = request.form['email'], password = request.form['password'])
-    # db.session.add(new_user)
-    user = db.session.add(new_user)
-    # login_user(user)
-    # print(user)
-    result = db.session.commit()
     email = request.form['email']
     print(email)
+
+    # ! I'm sure this can be revised 
     this_user = User.query.filter_by(email=email).first()
+    login_user(this_user)
+
+    # this is actually adding it the db you need .add() followed by .commit() everytime 
+    db.session.add(new_user)
+    db.session.commit()
     print(f"THIS IS USER: {this_user.id} {this_user.first_name} {this_user.last_name}")
     return redirect('/home')
 
+
+# ! FIGURE OUT LOGGING IN AND OUT 
 @app.route('/login')
 def login():
+    pass
+
+@app.route('/logout')
+def logout():
     pass

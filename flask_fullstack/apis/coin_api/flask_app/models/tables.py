@@ -1,12 +1,16 @@
 # import datetime
 import re
-from flask_app import db
+from flask_app import db,app
 from flask import flash
 from sqlalchemy.sql import func
 from sqlalchemy import text
 
+# ! FIGURE OUT THE BEST PLACE TO PUT THIS PROBABLY IN THE INIT.PY?
+from flask_login import LoginManager, login_manager, UserMixin, login_required, login_user, logout_user, current_user
+login_manager = LoginManager()
+login_manager.init_app(app)
 
-class User(db.Model):
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(255), nullable=False)
     last_name = db.Column(db.String(255), nullable=False)
