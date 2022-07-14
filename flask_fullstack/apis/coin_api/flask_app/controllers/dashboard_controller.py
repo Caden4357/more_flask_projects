@@ -26,7 +26,7 @@ def index():
         lst_of_coins.append({
             'name': coin['name'],
             'uuid': coin['uuid'],
-            'iconUrl': coin['iconUrl'],
+            'icon': coin['iconUrl'],
             'rank': coin['rank'],
             'price': coin['price']
             })

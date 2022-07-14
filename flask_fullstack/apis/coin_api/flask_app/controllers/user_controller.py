@@ -29,7 +29,7 @@ def register():
     print(email)
 
     # ! I'm sure this can be revised 
-    this_user = User.query.filter_by(email=email).first()
+    this_user = User.query.filter_by(email=email).first() #! Can I just use new_user instead on line 27?
     login_user(this_user)
 
     # this is actually adding it the db you need .add() followed by .commit() everytime 

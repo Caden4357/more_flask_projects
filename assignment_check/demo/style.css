@@ -1,0 +1,8 @@
+body {
+    background-color: blanchedalmond;
+}
+
+.poke-card {
+    width: 250px;
+    border-radius: 12px;
+}
